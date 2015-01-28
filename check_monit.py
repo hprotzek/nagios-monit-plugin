@@ -22,7 +22,7 @@ svc_types = {
 for (k, v) in svc_types.items(): svc_types[v] = k
 
 xml_hacks = (
-    (re.compile(r"<request>(.*?)</request>",flags=re.MULTILINE), (r"<request><![CDATA[\1]]></request>")),
+    (re.compile(r"<request><!\[CDATA\[(.*?)\]\]></request>",flags=re.MULTILINE), (r"<request>\1</request>")),
 )
 
 system_info = []
